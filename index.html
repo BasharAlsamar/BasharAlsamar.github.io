@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Soliman - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <img src="./profile.png" alt="Profile Picture" class="profile-pic">
+                <h1>Ahmad Soliman</h1>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container">
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Work Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#blog" class="nav-link">Blogs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Driven by a passion for intelligent systems and automation: Bachelor's degree in Medical Informatics with practical expertise in AI, software engineering, and document processing. Currently focused on developing scalable OCR-based invoice processing platforms that combine large language models, semantic annotation, and workflow orchestration to optimize document understanding in enterprise environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor's Degree in Medical Informatics</h3>
+                <h4>Universität zu Lübeck</h4>
+                <div class="date">10/2018 - 09/2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI Software Engineer (Freelancer)</h3>
+                        <h4>Institut für Angewandte Forschung der DHSH GmbH, Kiel, Germany</h4>
+                        <div class="date">September 2024 - Present</div>
+                        <p>
+                            Contributed to the development of a document analysis system titled "Rechnungen", focused on extracting structured information from scanned invoices using LayoutLMv1. 
+                            Trained a custom model to detect and extract key invoice fields such as invoice number, date, total amount, and creditor details, 
+                            based on OCR-processed data and bounding box annotations.
+                        </p>
+                        <p>
+                            Built a command-line interface and containerized API service to enable real-time inference and 
+                            field-level visualizations. Integrated support for multi-page PDF handling with logic for consolidating fields across pages. 
+                            Tracked model performance using Weights & Biases and enabled both CPU and GPU-based inference for flexible deployment.
+                        </p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> LayoutLMv1, Invoice Field Extraction, OCR, EasyOCR, PyTorch, FastAPI, Docker, Weights & Biases, OpenCV, Document Processing.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI Software Engineer (Working Student)</h3>
+                        <h4>Institut für Angewandte Forschung der DHSH GmbH, Kiel, Germany</h4>
+                        <div class="date">May 2024 - Present</div>
+                        <p>
+                            Contributed to the development of AI-supported systems for automated document capture and processing, with a focus on German construction tender documents. 
+                            Designed Vision RAG systems using the ColPali model, a novel architecture and training strategy based on Vision Language Models (VLMs) to efficiently index documents from their visual features.
+                        </p>
+                        <p>
+                            Utilized CrewAI to orchestrate AI agents for extracting key information such as client names and construction project details. 
+                            Maintained and extended the Extractor App for intelligent text analysis, implemented confidence scoring algorithms to assess extraction reliability, 
+                            and optimized processing pipelines through batch execution and fine-tuning of chunk parameters.
+                        </p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> Python, FastAPI, ColPali, CrewAI, Vision RAG, OCR, NLP, Docker, Document Processing, AI Agents
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor Thesis</h3>
+                        <h4>Universität zu Lübeck, Lübeck, Deutschland</h4>
+                        <div class="date">March 2024 - September 2024</div>
+                        <p>
+                            Completed a Bachelor Thesis titled "Anatomically correct translation of bronchoscopy video data using Conditional GANs" under the supervision of Prof. Dr. Marian Himstedt. 
+                            Focused on developing deep learning models to enhance image quality and diagnostic value of bronchoscopy data.
+                        </p>
+                        <p>
+                            Implemented and compared various GAN architectures (Pix2Pix, CycleGAN, Pix2PixHD), applied a three-way GAN approach for depth estimation, 
+                            and used segmentation models to evaluate the anatomical accuracy—specifically focusing on the localization of airway orifices.
+                        </p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> GANs, Medical Image Translation, Depth Estimation, Airway Segmentation, PyTorch, OpenCV, Medical Image Processing.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Test Assistant</h3>
+                        <h4>GESTICON - A VALEO BRAND, Lübeck, Deutschland</h4>
+                        <div class="date">February 2023 - April 2024</div>
+                        <p>
+                            Responsible for recording data using various sensors and cameras in test vehicles, 
+                            annotating data (e.g., keypoints, bounding boxes), and executing complex test plans. 
+                            Actively used tools like Confluence, Jira, and Git while contributing to test & validation processes for software functionality verification.
+                        </p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> Data Recording, Annotation, Test Execution, Test Documentation, Confluence, Jira, Git, Validation Procedures.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Medical Informatics Internship</h3>
+                        <h4>Universität zu Lübeck, Lübeck, Deutschland</h4>
+                        <div class="date">August 2023 - November 2023</div>
+                        <p>
+                            Worked on the "Pediatric Bone Checker" project at the Institute for Medical Informatics, 
+                            focusing on deep learning for medical image analysis under Prof. Dr. Matthias Heinrich and Ron Keuth. 
+                        </p>
+                        <p>
+                            Responsibilities included developing and training neural networks in PyTorch for bone age estimation, 
+                            applying image processing techniques (OpenCV, scikit-image) to enhance accuracy, and analyzing 
+                            the impact of factors like image quality on model performance.
+                        </p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> Deep Learning, PyTorch, Medical Image Processing, 
+                            Computer Vision, Neural Networks, OpenCV, scikit-image.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Resume Parser AI</h3>
+                        <p>A powerful CV/resume parsing system that extracts structured data from resumes using advanced vision-language models. The system processes PDF and PNG resume files to extract personal information, education, work experience, and skills while generating professional summaries and visual annotations of detected fields.</p>
+                        <p>Built with Qwen2.5-VL-7B-Instruct model for OCR processing, this solution supports multi-page resumes and provides structured JSON output for downstream applications. The system includes a comprehensive API with documentation powered by MkDocs.</p>
+                        <p class="key-tech">
+                            <strong>Key Technologies:</strong> Vision-Language Models, OCR, PyTorch, FastAPI, Docker, AutoGen, Field Annotation, JSON Extraction, MkDocs, Python, GitHub Actions
+                        </p>
+                        <div class="project-links">
+                            <a href="https://ahmadsoliman94.github.io/resume_parser.github.io/" target="_blank">Documentation</a>
+                            <a href="https://github.com/ahmadSoliman94/resume_parser.git" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <a href="https://docs.python.org/3/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+                    </div>
+                    <span class="skill-name">Python</span>
+                </a>
+                <a href="https://matplotlib.org/stable/contents.html" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" />
+                    </div>
+                    <span class="skill-name">Matplotlib</span>
+                </a>
+                <a href="https://pandas.pydata.org/docs/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" />
+                    </div>
+                    <span class="skill-name">Pandas</span>
+                </a>
+                <a href="https://pytorch.org/docs/stable/index.html" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+                    </div>
+                    <span class="skill-name">PyTorch</span>
+                </a>
+                <a href="https://docs.docker.com/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+                    </div>
+                    <span class="skill-name">Docker</span>
+                </a>
+                <a href="https://docs.portainer.io/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/portainer/portainer-original.svg" alt="Portainer" />
+                    </div>
+                    <span class="skill-name">Portainer</span>
+                </a>
+                <a href="https://fastapi.tiangolo.com/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
+                    </div>
+                    <span class="skill-name">FastAPI</span>
+                </a>
+                <a href="https://git-scm.com/doc" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+                    </div>
+                    <span class="skill-name">Git</span>
+                </a>
+                <a href="https://docs.github.com/en" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+                    </div>
+                    <span class="skill-name">GitHub</span>
+                </a>
+                <a href="https://learn.microsoft.com/en-us/azure/devops/?view=azure-devops" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="./icons/devops.svg" alt="DevOps" />
+                    </div>
+                    <span class="skill-name">DevOps</span>
+                </a>
+                <a href="https://docs.github.com/en/actions" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" />
+                    </div>
+                    <span class="skill-name">GitHub Actions</span>
+                </a>
+                <a href="https://linux.die.net/man/1/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+                    </div>
+                    <span class="skill-name">Linux</span>
+                </a>
+                <a href="https://ollama.com/library" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="./icons/ollama.png" alt="Ollama" />
+                    </div>
+                    <span class="skill-name">Ollama</span>
+                </a>
+                <a href="https://docs.anaconda.com/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" alt="Anaconda" />
+                    </div>
+                    <span class="skill-name">Anaconda</span>
+                </a>
+                <a href="https://huggingface.co/docs" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="./icons/hf.png" alt="HuggingFace" />
+                    </div>
+                    <span class="skill-name">HuggingFace</span>
+                </a>
+                <a href="https://github.com/microsoft/autogen" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="./icons/ag.jpg" alt="AutoGen" />
+                    </div>
+                    <span class="skill-name">AutoGen</span>
+                </a>
+                <a href="https://docs.oracle.com/javase/8/docs/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" />
+                    </div>
+                    <span class="skill-name">Java</span>
+                </a>
+                <a href="https://en.cppreference.com/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                    </div>
+                    <span class="skill-name">C++</span>
+                </a>
+                <a href="https://www.w3schools.com/sql/" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
+                    </div>
+                    <span class="skill-name">SQL</span>
+                </a>
+                <a href="https://confluence.atlassian.com/jira" class="skill-item" target="_blank">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira" />
+                    </div>
+                    <span class="skill-name">Jira</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <div class="container">
+            <h2>Certificates & Recommendations</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card visible">
+                    <div class="certificate-content">
+                        <h3>Bachelor of Science Degree - Medical Informatics</h3>
+                        <div class="certificate-links">
+                            <a href="docs/Bachelor_degree_certificate.pdf" target="_blank">View PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card visible">
+                    <div class="certificate-content">
+                        <h3>Recommendation Letter - Prof. Dr.-Ing. Marian Himstedt</h3>
+                        <div class="certificate-links">
+                            <a href="docs/ASoliman-ReferenceLetter2.pdf" target="_blank">View PDF</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="certificate-card visible">
+                    <div class="certificate-content">
+                        <h3>Work Certificate - gestigon GmbH (Valeo)</h3>
+                        <div class="certificate-links">
+                            <a href="docs/Arbeitszeugnis.pdf" target="_blank">View PDF</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="certificate-card visible">
+                    <div class="certificate-content">
+                        <h3>Internship Certificate - Medical Deep Learning</h3>
+                        <div class="certificate-links">
+                            <a href="docs/Praktiumszeugnis.pdf" target="_blank">View PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Blogs</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3><a href="https://medium.com/@ahmad.suliman011994/build-a-ci-cd-pipeline-with-github-actions-a-beginners-guide-823d50512f0f" target="_blank">Build a CI/CD Pipeline with GitHub Actions: A Beginner's Guide</a></h3>
+                        <p>Learn how to automate your software development workflow by setting up a CI/CD pipeline using GitHub Actions. This beginner-friendly guide walks through creating automated testing, building, and deployment processes to improve your development efficiency.</p>
+                        <p class="blog-date">Published on Medium - Mai 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-icons">
+                <a href="mailto:ahmad.suliman94@hotmail.com" class="contact-icon-box" target="_blank">
+                    <i class="contact-icon email-icon"><img src="./icons/hotmail.png" alt="Email" /></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ahmad-soliman-624a3b219/" class="contact-icon-box" target="_blank">
+                    <i class="contact-icon linkedin-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+                    </i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ahmad Soliman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
