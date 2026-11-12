@@ -93,7 +93,7 @@
 
     <article class="project-card featured" data-reveal>
       <span class="project-badge">BACHELORARBEIT · KOLLOQUIUM 03.07.2026</span>
-      <h3>Mensch-in-der-Schleife-Agenten in der Pflegerobotik</h3>
+      <h3>Human-in-the-Loop Agenten in der Pflegerobotik: Evaluierung und interaktive Anwendung von OCR und VLMs zur Verarbeitung handschriftlicher Pflegedokumentation</h3>
       <p class="card-lead">
         Agentische Multi-Pipeline-Architektur, die Pflegedokumentation über einen Pepper-Roboter
         verarbeitet — mit einem 4-Bit-quantisierten Vision Routing Agent zur Frame-Selektion und
@@ -106,11 +106,11 @@
         </div>
         <div>
           <dt>Stack</dt>
-          <dd>Python · Qwen3-VL · Pixtral (API) · OCR · 4-Bit-Quantisierung · Few-Shot-Prompting · Android (Java, QiSDK)</dd>
+          <dd>Python · Qwen3-VL · Pixtral (API) · OCR · 4-Bit-Quantisierung · Few-Shot-Prompting · Frame-Sampling/Batching · JSON-Ausgabe · Android (Java, QiSDK)</dd>
         </div>
         <div>
           <dt>Ergebnis</dt>
-          <dd>Vergleichende Evaluation dreier Extraktionspipelines (OCR+LLM-Baseline, VLM Few-Shot, Hybrid) auf einem synthetischen N=48-Datensatz, bewertet auf Transkriptionsgüte (ROUGE, BERTScore) und Extraktionsqualität. Verarbeitung im Arbeitsspeicher ohne Datenpersistenz (DSGVO-konform). Human-in-the-Loop-Korrektur mit TTS-Sprachausgabe als Proof of Concept auf Pepper-Hardware.</dd>
+          <dd>Vergleichende Evaluation dreier Extraktionspipelines (OCR+LLM-Baseline, VLM Few-Shot, Hybrid VLM-OCR+LLM) auf einem synthetischen N=48-Datensatz, bewertet auf Transkriptionsgüte (ROUGE, BERTScore, medizinische Terminologiegenauigkeit) und nachgelagerter Extraktionsqualität. Verarbeitung im Arbeitsspeicher ohne Datenpersistenz (DSGVO-konform). Human-in-the-Loop-Korrektur mit TTS-Sprachausgabe als Proof of Concept auf Pepper-Hardware.</dd>
         </div>
       </dl>
 
@@ -211,8 +211,8 @@
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">06/2026 – HEUTE</div>
-        <h3 class="tl-role">Forschungsassistent — Pepper-Roboter-Integration</h3>
-        <div class="tl-org">Universität zu Lübeck – IFIS · Hiwi-Vertrag seit 10/2026</div>
+        <h3 class="tl-role">Wissenschaftliche Hilfskraft – Pepper-Roboter-Integration</h3>
+        <div class="tl-org">Universität zu Lübeck – IFIS · Vertrag seit 10/2026</div>
         <ul>
           <li>Integration der Bachelorarbeit-Pipeline (Vision Routing Agent, Multi-Pipeline-Extraktion) auf einem Pepper-Roboter</li>
           <li>Android-Anwendung (Java, QiSDK) für den Betrieb auf dem Roboter; Modellaufrufe über die Mistral-API</li>
@@ -223,7 +223,7 @@
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">04/2026 – 05/2026</div>
-        <h3 class="tl-role">Wissenschaftliche Hilfskraft &amp; Robotik-Forschungsassistent</h3>
+        <h3 class="tl-role">Wissenschaftliche Hilfskraft (Robotik)</h3>
         <div class="tl-org">Universität zu Lübeck – IFIS</div>
         <ul>
           <li>Lehrunterstützung in KI/Data Science, Forschungskooperation im EU-Projekt RobOdin</li>
@@ -257,7 +257,7 @@
         <h3 class="tl-role">Machine Learning Praktikant (Data Science)</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
-          <li>Digital-Twin: CV-Modell für Hands-On-Detection, optimiert durch Feature Engineering &amp; Fine-Tuning</li>
+          <li>Digital-Twin: CV-Modell für Hands-On-Detection, optimiert durch Feature Engineering, Fine-Tuning &amp; Datenerweiterung</li>
           <li>Datensatzreduktion 2 Mio. → 100.000 Bilder bei gleicher Modellperformance</li>
           <li>Edge-Deployment des optimierten Modells direkt auf Fahrzeug-Hardware</li>
           <li>Experiment-Tracking und Modellversionierung mit ClearML</li>
