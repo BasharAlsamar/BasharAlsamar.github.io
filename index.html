@@ -6,6 +6,9 @@
 <title>Bashar Alsamar — AI/ML Engineer | Computer Vision &amp; Agentic AI</title>
 <meta name="description" content="Bashar Alsamar – AI/ML Engineer: Computer Vision, agentische KI-Systeme und Robotik. Über 4 Jahre Erfahrung bei Valeo/Gestigon und der Universität zu Lübeck.">
 <link rel="canonical" href="https://basharalsamar.github.io/">
+<link rel="alternate" hreflang="de" href="https://basharalsamar.github.io/">
+<link rel="alternate" hreflang="en" href="https://basharalsamar.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://basharalsamar.github.io/">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0a0f1a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0f1a'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='22' font-weight='700' text-anchor='middle' fill='%2352e8c9'%3Eb.%3C/text%3E%3C/svg%3E">
@@ -17,10 +20,8 @@
 <meta property="og:description" content="Computer Vision, agentische KI-Systeme und Robotik. Über 4 Jahre Erfahrung bei Valeo/Gestigon und der Universität zu Lübeck.">
 <meta property="og:url" content="https://basharalsamar.github.io/">
 <meta property="og:locale" content="de_DE">
-<!-- TODO Phase 2: og:image (1200x630) ergänzen, sobald das Bild existiert:
-<meta property="og:image" content="https://basharalsamar.github.io/assets/og-image.png">
-<meta property="og:image:alt" content="...">
-und twitter:card auf summary_large_image ändern. -->
+<meta property="og:locale:alternate" content="en_US">
+<!-- TODO Schritt 6: og:image (1200x630) ergänzen, sobald das Bild existiert, und twitter:card auf summary_large_image stellen -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bashar Alsamar — AI/ML Engineer">
 <meta name="twitter:description" content="Computer Vision, agentische KI-Systeme und Robotik. Über 4 Jahre Erfahrung bei Valeo/Gestigon und der Universität zu Lübeck.">
@@ -38,13 +39,14 @@ und twitter:card auf summary_large_image ändern. -->
   <div class="wrap">
     <div class="brand">bashar<span>.</span>alsamar</div>
     <div class="navlinks">
-      <a href="#about">About</a>
+      <a href="#projects">Projekte</a>
       <a href="#experience">Erfahrung</a>
       <a href="#education">Bildung</a>
-      <a href="#project">Projekt</a>
       <a href="#skills">Skills</a>
-      <a href="#certificates">Certificates</a>
       <a href="#contact">Kontakt</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <a href="index.html" lang="de" hreflang="de" aria-current="page">DE</a><span aria-hidden="true">|</span><a href="en/index.html" lang="en" hreflang="en">EN</a>
     </div>
   </div>
 </nav>
@@ -53,53 +55,150 @@ und twitter:card auf summary_large_image ändern. -->
 <header class="hero">
   <div class="wrap">
     <div class="tag-row">
-      <span class="detect-tag">FOKUS <b>Computer Vision · Agentic AI</b></span>
-      <span class="detect-tag">M.SC. <b>Data Science &amp; KI</b></span>
-      <span class="detect-tag">ERFAHRUNG <b>über 4 Jahre</b></span>
+      <span class="detect-tag">ROLLE <b>AI/ML Engineer</b></span>
       <span class="detect-tag">VERFÜGBAR <b>sofort · Vollzeit</b></span>
+      <span class="detect-tag">STANDORT <b>Lübeck / Raum Hamburg</b></span>
+      <span class="detect-tag">ERFAHRUNG <b>über 4 Jahre</b></span>
     </div>
     <h1>Bashar Alsamar<br><span class="accent">baut KI-Systeme,</span><br>die im Feld funktionieren.</h1>
-    <div class="role-line">KI-Softwareingenieur<span class="sep">/</span>Computer Vision<span class="sep">/</span>Data Science</div>
-    <p class="pitch">
-      B.Sc. Informatik (Data Science, Universität zu Lübeck), M.Sc. Data Science und KI berufsbegleitend,
-      mit über 4 Jahren Erfahrung seit 2022 in Industrie und Forschung — von Echtzeit-Fahrerüberwachung
-      bei Valeo/Gestigon bis zu agentischen VLM-Pipelines in der Pflegerobotik.
-    </p>
+    <div class="role-line">AI/ML Engineer – Computer Vision &amp; Agentic AI</div>
+    <div class="pitch" id="about">
+      <p>
+        Ich entwickle Computer-Vision- und Agentic-AI-Systeme, die über den Prototyp hinausgehen
+        — im Fahrzeug, als Live-Demo auf einem Pepper-Roboter oder eingebettet in reale
+        Datenpipelines. Über 4 Jahre Erfahrung seit 2022 in Industrie (Valeo/Gestigon) und
+        Forschung (Universität zu Lübeck).
+      </p>
+      <p>
+        B.Sc. Informatik (Data Science) abgeschlossen, M.Sc. Data Science und KI seit WS 2026/27 —
+        beide berufsbegleitend.
+      </p>
+    </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#project">Bachelorarbeit ansehen</a>
+      <a class="btn btn-primary" href="#projects">Projekte ansehen</a>
       <a class="btn btn-ghost" href="mailto:bashar.alsamar@gmail.com">Kontakt aufnehmen</a>
       <a class="btn btn-ghost" href="https://github.com/basharalsamar" target="_blank" rel="noopener">GitHub</a>
+      <!-- CV-Button: vorbereitet, aber ausgeblendet, bis die bereinigten PDFs vorliegen.
+           Dann: hidden entfernen und href auf die PDF setzen (z. B. assets/cv/Lebenslauf_BasharAlsamar_DE.pdf). -->
+      <a class="btn btn-ghost" id="cv-link" href="#" hidden>Lebenslauf (PDF)</a>
     </div>
   </div>
 </header>
 
-<section id="about">
+<section id="projects">
   <div class="wrap">
-    <div class="eyebrow">Über mich</div>
-    <div class="about-grid">
-      <div data-reveal>
-        <p>
-          Ich entwickle Computer-Vision- und Agentic-AI-Systeme, die über den Prototyp hinausgehen
-          — im Fahrzeug, als Live-Demo auf einem Pepper-Roboter oder eingebettet
-          in reale Datenpipelines. Den B.Sc. habe ich berufsbegleitend neben Werkstudenten-,
-          Trainee- und Forschungsassistenztätigkeit abgeschlossen; den M.Sc. absolviere ich
-          ebenfalls berufsbegleitend.
+    <span id="project"></span>
+    <div class="eyebrow">Arbeitsproben</div>
+    <h2>Projekte &amp; Forschung</h2>
+
+    <article class="project-card featured" data-reveal>
+      <span class="project-badge">BACHELORARBEIT · KOLLOQUIUM 03.07.2026</span>
+      <h3>Mensch-in-der-Schleife-Agenten in der Pflegerobotik</h3>
+      <p class="card-lead">
+        Agentische Multi-Pipeline-Architektur, die Pflegedokumentation über einen Pepper-Roboter
+        verarbeitet — mit einem 4-Bit-quantisierten Vision Routing Agent zur Frame-Selektion und
+        einem interaktiven Human-in-the-Loop-System zur Fehlerkorrektur.
+      </p>
+      <dl class="card-facts">
+        <div>
+          <dt>Meine Rolle</dt>
+          <dd>Konzeption, Implementierung und Evaluation der gesamten Pipeline sowie der Pepper-Anbindung.</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>Python · Qwen3-VL · Pixtral (API) · OCR · 4-Bit-Quantisierung · Few-Shot-Prompting · Android (Java, QiSDK)</dd>
+        </div>
+        <div>
+          <dt>Ergebnis</dt>
+          <dd>Vergleichende Evaluation dreier Extraktionspipelines (OCR+LLM-Baseline, VLM Few-Shot, Hybrid) auf einem synthetischen N=48-Datensatz, bewertet auf Transkriptionsgüte (ROUGE, BERTScore) und Extraktionsqualität. Verarbeitung im Arbeitsspeicher ohne Datenpersistenz (DSGVO-konform). Human-in-the-Loop-Korrektur mit TTS-Sprachausgabe als Proof of Concept auf Pepper-Hardware.</dd>
+        </div>
+      </dl>
+
+      <div class="video-frame">
+        <video controls preload="none">
+          <source src="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/raw/main/assets/readme/BA_demo.mp4" type="video/mp4">
+          Dein Browser unterstützt das Video-Tag nicht.
+          <a href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/blob/main/assets/readme/BA_demo.mp4">Video direkt ansehen</a>
+        </video>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary" href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents" target="_blank" rel="noopener">Repository ansehen</a>
+        <a class="btn btn-ghost" href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/blob/main/Thesis/Abschlussarbeit.pdf" target="_blank" rel="noopener">Thesis-PDF öffnen</a>
+      </div>
+    </article>
+
+    <div class="project-grid">
+
+      <article class="project-card" data-reveal>
+        <span class="project-badge">FORSCHUNG · IFIS · SEIT 06/2026</span>
+        <h3>Pepper-Integration in der Pflegerobotik</h3>
+        <p class="card-lead">
+          Weiterführung der Bachelorarbeit am IFIS (Universität zu Lübeck): Die Pipeline läuft
+          als Pilotsystem auf einem Pepper-Roboter.
         </p>
-      </div>
-      <div data-reveal>
-        <div class="stat-box">
-          <div class="num">99,6%</div>
-          <div class="label">Genauigkeit bei der Hands-On-Detection (Hände am Lenkrad) im Digital-Twin-Projekt bei Valeo</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">95%</div>
-          <div class="label">Datensatzreduktion bei gleichbleibender Modellperformance</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">100%</div>
-          <div class="label">identische Ausgaben (Output-Parität) zwischen C++-Implementierung und Python-ONNX-Runtime</div>
-        </div>
-      </div>
+        <dl class="card-facts">
+          <div>
+            <dt>Meine Rolle</dt>
+            <dd>Integration der Pipeline auf dem Roboter, Entwicklung der Android-App, Weiterentwicklung des Human-in-the-Loop-Feedbacksystems.</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Android (Java, QiSDK) · Pepper · TTS · Modellaufrufe über die Mistral-API</dd>
+          </div>
+          <div>
+            <dt>Ergebnis</dt>
+            <dd>Pilottest und Live-Demo auf der Woche der KI Lübeck (10.11.2026), präsentiert mit A0-Poster.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="project-card" data-reveal>
+        <span class="project-badge">FORSCHUNG · 02/2025 – 03/2026</span>
+        <h3>AnoMed-IT-S: CNN-Knoten in C++ für ONNX</h3>
+        <p class="card-lead">
+          Benutzerdefinierte CNN-Knoten in C++ nach ONNX-Spezifikation für performante
+          Modellbereitstellung, am Institut für Computerengineering (Universität zu Lübeck).
+        </p>
+        <dl class="card-facts">
+          <div>
+            <dt>Meine Rolle</dt>
+            <dd>Implementierung der CNN-Knoten in C++ und Aufbau der sprachübergreifenden Validierungspipeline.</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>C++ · ONNX · Python (ONNX Runtime)</dd>
+          </div>
+          <div>
+            <dt>Ergebnis</dt>
+            <dd>Identische Ausgaben (Output-Parität) zwischen C++-Implementierung und Python-ONNX-Runtime.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="project-card" data-reveal>
+        <span class="project-badge">INDUSTRIE · VALEO/GESTIGON · 2023</span>
+        <h3>Hands-On-Detection im Digital-Twin-Projekt</h3>
+        <p class="card-lead">
+          Computer-Vision-Modell zur Erkennung von Händen am Lenkrad, optimiert und auf
+          Fahrzeug-Hardware bereitgestellt.
+        </p>
+        <dl class="card-facts">
+          <div>
+            <dt>Meine Rolle</dt>
+            <dd>Modelloptimierung als Machine-Learning-Praktikant: Feature Engineering, Fine-Tuning, Datenerweiterung, Edge-Deployment, Experiment-Tracking mit ClearML.</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Python · Deep Learning · ClearML · Edge-Deployment</dd>
+          </div>
+          <div>
+            <dt>Ergebnis</dt>
+            <dd>99,6&nbsp;% Genauigkeit bei der Hands-On-Detection (Hände am Lenkrad) im Digital-Twin-Projekt bei Valeo; Datensatz um 95&nbsp;% reduziert (2 Mio. → 100.000 Bilder) bei gleicher Modellperformance.</dd>
+          </div>
+        </dl>
+      </article>
+
     </div>
   </div>
 </section>
@@ -115,16 +214,16 @@ und twitter:card auf summary_large_image ändern. -->
         <h3 class="tl-role">Forschungsassistent — Pepper-Roboter-Integration</h3>
         <div class="tl-org">Universität zu Lübeck – IFIS · Hiwi-Vertrag seit 10/2026</div>
         <ul>
-          <li>Integration der Bachelorarbeit-Pipeline (Vision Routing Agent, Multi-Pipeline-Extraktion) auf einem realen Pepper-Roboter</li>
-          <li>Android-Anwendung (Java, QiSDK) für On-Device-Deployment in der Pflegerobotik</li>
-          <li>Weiterentwicklung des Human-in-the-Loop-Feedbacksystems für den produktiven Einsatz</li>
+          <li>Integration der Bachelorarbeit-Pipeline (Vision Routing Agent, Multi-Pipeline-Extraktion) auf einem Pepper-Roboter</li>
+          <li>Android-Anwendung (Java, QiSDK) für den Betrieb auf dem Roboter; Modellaufrufe über die Mistral-API</li>
+          <li>Weiterentwicklung des Human-in-the-Loop-Feedbacksystems für Pilottests in der Pflegerobotik</li>
           <li>Woche der KI Lübeck (10.11.2026): Live-Demo des Systems auf dem Pepper-Roboter, präsentiert mit einem A0-Poster</li>
         </ul>
       </div>
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">04/2026 – 05/2026</div>
-        <h3 class="tl-role">Wissenschaftliche Hilfskraft & Robotik-Forschungsassistent</h3>
+        <h3 class="tl-role">Wissenschaftliche Hilfskraft &amp; Robotik-Forschungsassistent</h3>
         <div class="tl-org">Universität zu Lübeck – IFIS</div>
         <ul>
           <li>Lehrunterstützung in KI/Data Science, Forschungskooperation im EU-Projekt RobOdin</li>
@@ -145,7 +244,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">08/2023 – 01/2025</div>
-        <h3 class="tl-role">KI- und Data-Science-Spezialist (Trainee & HiWi)</h3>
+        <h3 class="tl-role">KI- und Data-Science-Spezialist (Trainee &amp; HiWi)</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
           <li>Aware2All: Datenpipeline-Architektur mit Python (Pandas, NumPy), Preprocessing, Visualisierung</li>
@@ -158,7 +257,7 @@ und twitter:card auf summary_large_image ändern. -->
         <h3 class="tl-role">Machine Learning Praktikant (Data Science)</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
-          <li>Digital-Twin: CV-Modell für Hands-On-Detection, optimiert durch Feature Engineering & Fine-Tuning</li>
+          <li>Digital-Twin: CV-Modell für Hands-On-Detection, optimiert durch Feature Engineering &amp; Fine-Tuning</li>
           <li>Datensatzreduktion 2 Mio. → 100.000 Bilder bei gleicher Modellperformance</li>
           <li>Edge-Deployment des optimierten Modells direkt auf Fahrzeug-Hardware</li>
           <li>Experiment-Tracking und Modellversionierung mit ClearML</li>
@@ -203,41 +302,6 @@ und twitter:card auf summary_large_image ändern. -->
         </ul>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<section id="project">
-  <div class="wrap">
-    <div class="eyebrow">Hauptprojekt</div>
-    <h2>Bachelorarbeit</h2>
-    <div class="project-card" data-reveal>
-      <span class="project-badge">BACHELORKOLLOQUIUM · 03.07.2026</span>
-      <h3>Mensch-in-der-Schleife-Agenten in der Pflegerobotik</h3>
-      <p>
-        Eine agentische Multi-Pipeline-Architektur, die Pflegedokumentation direkt auf einem
-        realen Pepper-Roboter verarbeitet — mit einem 4-Bit-quantisierten Vision Routing Agent
-        zur Frame-Selektion und einem interaktiven Human-in-the-Loop-System zur Fehlerkorrektur.
-      </p>
-      <ul class="feature-list">
-        <li>Vision Routing Agent: leichtgewichtiges 4-Bit-VLM mit Few-Shot-Prompting zur Frame-Auswahl — In-Memory-Verarbeitung ohne Datenpersistenz (DSGVO-konform)</li>
-        <li>Vergleichende Evaluation dreier Extraktionspipelines: OCR+LLM-Baseline, VLM Few-Shot, Hybrid — über Qwen3-VL und Pixtral</li>
-        <li>Zweistufige Evaluation: Transkriptionsgüte (ROUGE, BERTScore) und nachgelagerte Extraktionsqualität, getestet auf synthetischem N=48-Datensatz</li>
-        <li>Human-in-the-Loop-Feedbacksystem mit TTS-Sprachausgabe, produktiv auf Pepper-Hardware (Android, QiSDK)</li>
-      </ul>
-
-      <div class="video-frame">
-        <video controls preload="metadata">
-          <source src="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/raw/main/assets/readme/BA_demo.mp4" type="video/mp4">
-          Dein Browser unterstützt das Video-Tag nicht.
-          <a href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/blob/main/assets/readme/BA_demo.mp4">Video direkt ansehen</a>
-        </video>
-      </div>
-
-      <div class="project-links">
-        <a class="btn btn-primary" href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents" target="_blank" rel="noopener">Repository ansehen</a>
-        <a class="btn btn-ghost" href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/blob/main/Thesis/Abschlussarbeit.pdf" target="_blank" rel="noopener">Thesis-PDF öffnen</a>
-      </div>
     </div>
   </div>
 </section>
@@ -288,30 +352,6 @@ und twitter:card auf summary_large_image ändern. -->
     </div>
   </div>
 </section>
-
-<section id="certificates">
-  <div class="wrap">
-    <div class="eyebrow">Nachweise</div>
-    <h2>Certificates &amp; Recommendations</h2>
-    <div class="cert-grid">
-      <div class="info-card" data-reveal>
-        <h3>Certificates</h3>
-        <ul>
-          <li><span class="meta">Universität zu Lübeck</span>B.Sc. Informatik, Schwerpunkt Data Science</li>
-          <li><span class="meta">Technical Stack</span>Praxis in Python, C++, PyTorch, ONNX und OpenCV</li>
-        </ul>
-      </div>
-      <div class="info-card" data-reveal>
-        <h3>Recommendations</h3>
-        <ul>
-          <li><span class="meta">Valeo / Gestigon · Universität zu Lübeck</span>Referenzen auf Anfrage</li>
-          <li><span class="meta">Collaboration</span>Empfehlungen zu Computer Vision, Data Science und Robotik</li>
-          <li><span class="meta">Languages</span>Deutsch, Englisch und Arabisch für internationale Teams</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer id="contact">
@@ -324,6 +364,7 @@ und twitter:card auf summary_large_image ändern. -->
         <a class="btn btn-ghost" href="https://linkedin.com/in/BasharAlsamar" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/basharalsamar" target="_blank" rel="noopener">GitHub</a>
       </div>
+      <p class="contact-note" id="certificates">Referenzen auf Anfrage.</p>
     </div>
     <div class="foot-meta">
       <span>Lübeck, Deutschland</span>
