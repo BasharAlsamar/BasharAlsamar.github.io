@@ -114,13 +114,16 @@
         </div>
       </dl>
 
-      <div class="video-frame">
-        <video controls preload="none">
-          <source src="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/raw/main/assets/readme/BA_demo.mp4" type="video/mp4">
-          Dein Browser unterstützt das Video-Tag nicht.
-          <a href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents/blob/main/assets/readme/BA_demo.mp4">Video direkt ansehen</a>
-        </video>
-      </div>
+      <figure class="video-figure">
+        <div class="video-frame">
+          <video controls preload="none" aria-describedby="demo-desc">
+            <source src="assets/video/ba-demo.mp4" type="video/mp4">
+            Dein Browser unterstützt das Video-Tag nicht.
+            <a href="assets/video/ba-demo.mp4">Video direkt ansehen</a>
+          </video>
+        </div>
+        <figcaption id="demo-desc">PC-Demo der Pipeline: Sie liest eine synthetische handschriftliche Pflegenotiz und gibt die erkannten Inhalte per Sprachausgabe (TTS) wieder. Das Video hat Ton.</figcaption>
+      </figure>
 
       <div class="project-links">
         <a class="btn btn-primary" href="https://github.com/BasharAlsamar/bachelor-thesis-nursing-agents" target="_blank" rel="noopener">Repository ansehen</a>

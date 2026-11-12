@@ -246,10 +246,12 @@ h2{ font-size: clamp(24px,3.5vw,32px); font-weight: 700; margin-bottom: 34px; le
   letter-spacing: 0.04em; margin-bottom: 2px;
 }
 .card-facts dd{ font-size: 15px; color:#b7c0d1; }
+.video-figure{ margin-top: 22px; }
 .video-frame{
-  margin-top: 22px; border-radius: 10px; overflow:hidden; border: 1px solid var(--line);
+  border-radius: 10px; overflow:hidden; border: 1px solid var(--line);
   background:#000;
 }
+.video-figure figcaption{ margin-top: 10px; font-size: var(--fs-small); color: var(--muted); }
 .video-frame video{ width:100%; display:block; }
 .project-links{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 22px; }
 
