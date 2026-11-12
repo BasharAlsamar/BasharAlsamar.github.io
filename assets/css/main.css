@@ -255,6 +255,47 @@ h2{ font-size: clamp(24px,3.5vw,32px); font-weight: 700; margin-bottom: 34px; le
 .video-frame video{ width:100%; display:block; }
 .project-links{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 22px; }
 
+/* ── news: Teaser auf der Startseite ─────────────── */
+.news-card{
+  display:grid; grid-template-columns: minmax(0, 300px) 1fr; gap: clamp(18px, 4vw, 32px);
+  align-items:center;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--line); border-radius: 14px;
+  padding: clamp(16px, 4vw, 24px);
+}
+.news-thumb{ display:block; border-radius: 10px; overflow:hidden; border: 1px solid var(--line); }
+.news-thumb img{ display:block; width:100%; height:auto; }
+.news-card h3{ font-size: 20px; line-height: 1.3; margin: 4px 0 10px; }
+.news-card h3 a:hover{ color: var(--signal); }
+.news-card p{ color:#c3cbdb; font-size: 15px; }
+.news-date{ font-family:'IBM Plex Mono',monospace; font-size: var(--fs-small); color: var(--muted); }
+.text-link{ display:inline-block; margin-top: 12px; color: var(--signal); font-weight:600; font-size: 15px; }
+.text-link:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── news: Artikelseite ──────────────────────────── */
+.news-article{ padding: clamp(36px, 8vw, 70px) 0 clamp(40px, 8vw, 70px); }
+.news-body{ max-width: 700px; }
+.news-body > p, .news-body .news-list, .news-body .qa{ font-size: 16.5px; color:#c3cbdb; }
+.news-body > p{ margin-bottom: 16px; }
+.back-link{ display:inline-block; margin-bottom: 22px; color: var(--muted); font-size: var(--fs-small); font-family:'IBM Plex Mono',monospace; }
+.back-link:hover{ color: var(--text); }
+.news-title{ font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 6px 0 24px; }
+.news-list{ list-style:none; margin: 0 0 16px; }
+.news-list li{ position:relative; padding-left: 22px; margin-bottom: 8px; }
+.news-list li::before{ content:"▸"; position:absolute; left:0; color: var(--signal); }
+.qa{ margin: 8px 0 24px; }
+.qa dt{ font-weight: 600; color: var(--text); margin-top: 22px; }
+.qa dd{ margin-top: 6px; padding-left: 18px; border-left: 2px solid var(--signal-dim); }
+.gallery-section{ margin-top: 28px; }
+.gallery-section h2{ font-size: 22px; margin-bottom: 18px; }
+.gallery{ list-style:none; display:flex; flex-wrap:wrap; gap: 12px; }
+.gallery li{ flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 200px); }
+.gallery::after{ content:""; flex-grow: 1000000; }
+.gallery a{ display:block; border: 1px solid var(--line); border-radius: 8px; overflow:hidden; }
+.gallery a:hover{ border-color: var(--signal-dim); }
+.gallery img{ display:block; width:100%; height:auto; }
+.navlinks a[aria-current="page"]{ color: var(--text); }
+
 /* ── skills ──────────────────────────────────────── */
 .skill-groups{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 24px; }
 .skill-group h3{
@@ -287,6 +328,7 @@ footer{ padding: clamp(48px, 9vw, 70px) 0 50px; }
   :root{ --gutter: 20px; }
   /* Mobil: Navigation bricht in eine zweite Zeile um, kein Sticky (spart Platz) */
   nav{ position: static; }
+  .news-card{ grid-template-columns: 1fr; }
   .navlinks{ order: 3; width: 100%; gap: 2px 18px; }
   .project-card::before{ left: 20px; right: 20px; }
 }
