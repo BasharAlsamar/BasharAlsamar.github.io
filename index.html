@@ -27,301 +27,14 @@ und twitter:card auf summary_large_image ändern. -->
 
 <!-- Schriften lokal gehostet (keine Verbindung zu Google-Servern) -->
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-  @font-face{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('assets/fonts/inter-latin-wght-normal.woff2') format('woff2');
-  }
-  @font-face{
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
-  }
-  @font-face{
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('assets/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
-  }
-  @font-face{
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('assets/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2');
-  }
-
-  :root{
-    --ink: #0a0f1a;
-    --panel: #111827;
-    --panel-2: #161f30;
-    --line: #24304a;
-    --text: #e7ecf5;
-    --muted: #8592a8;
-    --signal: #52e8c9;
-    --signal-dim: #2f7a6d;
-    --amber: #f0a83c;
-    --radius: 10px;
-  }
-  *{ box-sizing: border-box; margin:0; padding:0; }
-  html{ scroll-behavior: smooth; }
-  body{
-    background: var(--ink);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  a{ color: inherit; text-decoration: none; }
-  .mono{ font-family: 'IBM Plex Mono', monospace; }
-  .wrap{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  /* ── background grid texture ───────────────────── */
-  .grid-bg{
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image:
-      linear-gradient(rgba(82,232,201,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(82,232,201,0.035) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
-  }
-
-  /* ── nav ─────────────────────────────────────────── */
-  nav{
-    position: sticky; top:0; z-index: 50;
-    background: rgba(10,15,26,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .wrap{ display:flex; justify-content:space-between; align-items:center; height: 64px; }
-  .brand{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:15px; letter-spacing: 0.02em; }
-  .brand span{ color: var(--signal); }
-  .navlinks{ display:flex; gap: 28px; font-size: 14px; color: var(--muted); }
-  .navlinks a:hover{ color: var(--text); }
-
-  /* ── hero ────────────────────────────────────────── */
-  header.hero{ padding: 110px 0 90px; position: relative; }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 28px; }
-  .detect-tag{
-    font-family:'IBM Plex Mono',monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.03em;
-    padding: 5px 10px;
-    border: 1px solid var(--signal-dim);
-    border-radius: 4px;
-    color: var(--signal);
-    background: rgba(82,232,201,0.06);
-    opacity:0;
-    animation: tagIn 0.5s ease forwards;
-  }
-  .detect-tag b{ color: var(--text); font-weight: 600; }
-  .detect-tag:nth-child(1){ animation-delay: 0.1s; }
-  .detect-tag:nth-child(2){ animation-delay: 0.25s; }
-  .detect-tag:nth-child(3){ animation-delay: 0.4s; }
-  .detect-tag:nth-child(4){ animation-delay: 0.55s; }
-  @keyframes tagIn{
-    from{ opacity:0; transform: translateY(6px); }
-    to{ opacity:1; transform: translateY(0); }
-  }
-
-  h1{
-    font-size: clamp(38px, 6vw, 60px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    margin-bottom: 18px;
-  }
-  h1 .accent{ color: var(--signal); }
-  .role-line{
-    font-family:'IBM Plex Mono',monospace;
-    color: var(--muted);
-    font-size: 16px;
-    margin-bottom: 26px;
-  }
-  .role-line .sep{ color: var(--signal-dim); margin: 0 8px; }
-  .pitch{
-    max-width: 620px;
-    color: #c3cbdb;
-    font-size: 16.5px;
-    margin-bottom: 36px;
-  }
-  .cta-row{ display:flex; flex-wrap:wrap; gap: 14px; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding: 12px 20px;
-    border-radius: var(--radius);
-    font-size: 14.5px;
-    font-weight: 600;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
-  }
-  .btn-primary{ background: var(--signal); color: #06231e; }
-  .btn-primary:hover{ background: #6ff2d5; transform: translateY(-1px); }
-  .btn-ghost{ border-color: var(--line); color: var(--text); }
-  .btn-ghost:hover{ border-color: var(--signal-dim); background: rgba(82,232,201,0.05); }
-
-  /* ── section shell ──────────────────────────────── */
-  section{ padding: 70px 0; border-top: 1px solid var(--line); }
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size: 12px;
-    color: var(--signal);
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
-  }
-  .eyebrow::before{ content: "// "; color: var(--signal-dim); }
-  h2{ font-size: clamp(24px,3.5vw,32px); font-weight: 700; margin-bottom: 34px; letter-spacing: -0.01em; }
-
-  /* ── about ───────────────────────────────────────── */
-  .about-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items:start; }
-  .about-grid p{ color:#c3cbdb; margin-bottom:14px; }
-  .stat-box{
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    margin-bottom: 12px;
-  }
-  .stat-box .num{ font-family:'IBM Plex Mono',monospace; font-size: 26px; color: var(--signal); font-weight:600; }
-  .stat-box .label{ font-size: 12.5px; color: var(--muted); margin-top:2px; }
-
-  /* ── experience timeline ────────────────────────── */
-  .timeline{ position: relative; padding-left: 26px; }
-  .timeline::before{
-    content:""; position:absolute; left:5px; top:6px; bottom: 6px; width:1px;
-    background: linear-gradient(var(--signal-dim), var(--line));
-  }
-  .tl-item{ position: relative; padding-bottom: 34px; }
-  .tl-item:last-child{ padding-bottom: 0; }
-  .tl-item::before{
-    content:""; position:absolute; left:-26px; top:5px;
-    width:9px; height:9px; border-radius:50%;
-    background: var(--ink); border: 2px solid var(--signal);
-  }
-  .tl-date{ font-family:'IBM Plex Mono',monospace; font-size:12px; color: var(--muted); margin-bottom:4px; }
-  .tl-role{ font-size: 17px; font-weight: 700; margin-bottom: 2px; }
-  .tl-org{ font-size: 13.5px; color: var(--signal); margin-bottom: 10px; }
-  .tl-item ul{ list-style: none; }
-  .tl-item li{ font-size: 14.5px; color: #b7c0d1; margin-bottom: 6px; padding-left: 16px; position: relative; }
-  .tl-item li::before{ content:"–"; position:absolute; left:0; color: var(--muted); }
-
-  /* ── featured project ────────────────────────────── */
-  .project-card{
-    background: linear-gradient(180deg, var(--panel), var(--panel-2));
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .project-card::before{
-    content:""; position:absolute; top:-1px; left: 32px; right: 32px; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--signal), transparent);
-  }
-  .project-badge{
-    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px;
-    color: var(--amber); border:1px solid #6b4d1f; background: rgba(240,168,60,0.08);
-    padding: 4px 9px; border-radius:4px; margin-bottom: 18px;
-  }
-  .project-card h3{ font-size: 24px; margin-bottom: 14px; }
-  .project-card p{ color:#c3cbdb; font-size: 15px; margin-bottom: 14px; }
-  .feature-list{ list-style:none; margin: 20px 0; }
-  .feature-list li{
-    font-size: 14.5px; color:#b7c0d1; padding: 9px 0 9px 22px; position:relative;
-    border-bottom: 1px solid var(--line);
-  }
-  .feature-list li:last-child{ border-bottom:none; }
-  .feature-list li::before{ content:"▸"; position:absolute; left:0; color: var(--signal); }
-  .video-frame{
-    margin-top: 22px; border-radius: 10px; overflow:hidden; border: 1px solid var(--line);
-    background:#000;
-  }
-  .video-frame video{ width:100%; display:block; }
-  .project-links{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 22px; }
-
-  /* ── skills ──────────────────────────────────────── */
-  .skill-groups{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 24px; }
-  .skill-group h4{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color: var(--muted);
-    letter-spacing:0.05em; margin-bottom: 12px; text-transform: uppercase;
-  }
-  .skill-tags{ display:flex; flex-wrap:wrap; gap:8px; }
-  .skill-tag{
-    font-size: 13px; padding: 6px 12px; border-radius: 6px;
-    background: var(--panel); border: 1px solid var(--line); color: #cdd5e3;
-  }
-
-  /* ── certificates / recommendations ────────────── */
-  .cert-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
-  .info-card{
-    background: linear-gradient(180deg, var(--panel), var(--panel-2));
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 24px;
-  }
-  .info-card h3{ font-size: 18px; margin-bottom: 14px; }
-  .info-card ul{ list-style:none; }
-  .info-card li{
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    color:#c3cbdb;
-    font-size: 14.5px;
-  }
-  .info-card li:last-child{ border-bottom:none; }
-  .info-card a{ color: var(--signal); text-decoration: underline; text-underline-offset: 2px; }
-  .info-card .meta{
-    display:block;
-    font-family:'IBM Plex Mono',monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-
-  /* ── footer / contact ────────────────────────────── */
-  footer{ padding: 70px 0 50px; }
-  .contact-box{
-    text-align:center; padding: 50px 30px; background: var(--panel);
-    border: 1px solid var(--line); border-radius: 14px;
-  }
-  .contact-box h2{ margin-bottom: 12px; }
-  .contact-box p{ color: var(--muted); margin-bottom: 28px; }
-  .contact-links{ display:flex; justify-content:center; gap: 16px; flex-wrap:wrap; }
-  .foot-meta{
-    display:flex; justify-content:space-between; margin-top: 40px; color: var(--muted);
-    font-size: 12.5px; font-family:'IBM Plex Mono',monospace; flex-wrap:wrap; gap:10px;
-  }
-
-  @media (max-width: 760px){
-    .about-grid{ grid-template-columns: 1fr; }
-    .navlinks{ display:none; }
-  }
-
-  [data-reveal]{ opacity:0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  [data-reveal].in{ opacity:1; transform: translateY(0); }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation: none !important; transition: none !important; }
-    [data-reveal]{ opacity:1; transform:none; }
-  }
-</style>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-<div class="grid-bg"></div>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<div class="grid-bg" aria-hidden="true"></div>
 
-<nav>
+<nav aria-label="Hauptnavigation">
   <div class="wrap">
     <div class="brand">bashar<span>.</span>alsamar</div>
     <div class="navlinks">
@@ -336,6 +49,7 @@ und twitter:card auf summary_large_image ändern. -->
   </div>
 </nav>
 
+<main id="main">
 <header class="hero">
   <div class="wrap">
     <div class="tag-row">
@@ -398,7 +112,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">06/2026 – HEUTE</div>
-        <div class="tl-role">Forschungsassistent — Pepper-Roboter-Integration</div>
+        <h3 class="tl-role">Forschungsassistent — Pepper-Roboter-Integration</h3>
         <div class="tl-org">Universität zu Lübeck – IFIS · Hiwi-Vertrag seit 10/2026</div>
         <ul>
           <li>Integration der Bachelorarbeit-Pipeline (Vision Routing Agent, Multi-Pipeline-Extraktion) auf einem realen Pepper-Roboter</li>
@@ -410,7 +124,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">04/2026 – 05/2026</div>
-        <div class="tl-role">Wissenschaftliche Hilfskraft & Robotik-Forschungsassistent</div>
+        <h3 class="tl-role">Wissenschaftliche Hilfskraft & Robotik-Forschungsassistent</h3>
         <div class="tl-org">Universität zu Lübeck – IFIS</div>
         <ul>
           <li>Lehrunterstützung in KI/Data Science, Forschungskooperation im EU-Projekt RobOdin</li>
@@ -420,7 +134,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">02/2025 – 03/2026</div>
-        <div class="tl-role">KI-Softwareentwickler (RA)</div>
+        <h3 class="tl-role">KI-Softwareentwickler (RA)</h3>
         <div class="tl-org">Universität zu Lübeck – Institut für Computerengineering</div>
         <ul>
           <li>AnoMed-IT-S: CNN-Knoten in C++ nach ONNX-Spezifikation für performante Modellbereitstellung</li>
@@ -431,7 +145,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">08/2023 – 01/2025</div>
-        <div class="tl-role">KI- und Data-Science-Spezialist (Trainee & HiWi)</div>
+        <h3 class="tl-role">KI- und Data-Science-Spezialist (Trainee & HiWi)</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
           <li>Aware2All: Datenpipeline-Architektur mit Python (Pandas, NumPy), Preprocessing, Visualisierung</li>
@@ -441,7 +155,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">03/2023 – 07/2023</div>
-        <div class="tl-role">Machine Learning Praktikant (Data Science)</div>
+        <h3 class="tl-role">Machine Learning Praktikant (Data Science)</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
           <li>Digital-Twin: CV-Modell für Hands-On-Detection, optimiert durch Feature Engineering & Fine-Tuning</li>
@@ -453,7 +167,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">08/2022 – 02/2023</div>
-        <div class="tl-role">Test- und Validierungsstudent</div>
+        <h3 class="tl-role">Test- und Validierungsstudent</h3>
         <div class="tl-org">Valeo (Gestigon GmbH)</div>
         <ul>
           <li>Annotation und Bereinigung großflächiger Videodatensätze</li>
@@ -473,7 +187,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">SEIT WS 2026/27</div>
-        <div class="tl-role">M.Sc. Informatik (Data Science und KI)</div>
+        <h3 class="tl-role">M.Sc. Informatik (Data Science und KI)</h3>
         <div class="tl-org">Universität zu Lübeck</div>
         <ul>
           <li>Berufsbegleitendes Studium</li>
@@ -482,7 +196,7 @@ und twitter:card auf summary_large_image ändern. -->
 
       <div class="tl-item" data-reveal>
         <div class="tl-date">2026</div>
-        <div class="tl-role">B.Sc. Informatik (Schwerpunkt Data Science)</div>
+        <h3 class="tl-role">B.Sc. Informatik (Schwerpunkt Data Science)</h3>
         <div class="tl-org">Universität zu Lübeck</div>
         <ul>
           <li>Berufsbegleitend neben Werkstudenten-, Trainee- und Forschungsassistenztätigkeit</li>
@@ -534,14 +248,14 @@ und twitter:card auf summary_large_image ändern. -->
     <h2>Fähigkeiten</h2>
     <div class="skill-groups">
       <div class="skill-group" data-reveal>
-        <h4>Programmierung</h4>
+        <h3>Programmierung</h3>
         <div class="skill-tags">
           <span class="skill-tag">Python</span><span class="skill-tag">C++</span>
           <span class="skill-tag">Git</span><span class="skill-tag">Docker</span>
         </div>
       </div>
       <div class="skill-group" data-reveal>
-        <h4>ML / KI</h4>
+        <h3>ML / KI</h3>
         <div class="skill-tags">
           <span class="skill-tag">PyTorch</span><span class="skill-tag">ONNX</span>
           <span class="skill-tag">LLMs</span><span class="skill-tag">VLMs</span>
@@ -550,21 +264,21 @@ und twitter:card auf summary_large_image ändern. -->
         </div>
       </div>
       <div class="skill-group" data-reveal>
-        <h4>Data Science / Vision</h4>
+        <h3>Data Science / Vision</h3>
         <div class="skill-tags">
           <span class="skill-tag">OpenCV</span><span class="skill-tag">Pandas</span>
           <span class="skill-tag">NumPy</span><span class="skill-tag">Feature Engineering</span>
         </div>
       </div>
       <div class="skill-group" data-reveal>
-        <h4>MLOps / Tools</h4>
+        <h3>MLOps / Tools</h3>
         <div class="skill-tags">
           <span class="skill-tag">ClearML</span><span class="skill-tag">Jira</span>
           <span class="skill-tag">Confluence</span>
         </div>
       </div>
       <div class="skill-group" data-reveal>
-        <h4>Sprachen</h4>
+        <h3>Sprachen</h3>
         <div class="skill-tags">
           <span class="skill-tag">Arabisch (Muttersprache)</span>
           <span class="skill-tag">Deutsch (C1)</span>
@@ -598,6 +312,7 @@ und twitter:card auf summary_large_image ändern. -->
     </div>
   </div>
 </section>
+</main>
 
 <footer id="contact">
   <div class="wrap">
